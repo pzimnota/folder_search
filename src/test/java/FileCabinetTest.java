@@ -34,11 +34,11 @@ public class FileCabinetTest {
 
 
         List<Folder> childrenFolders = new ArrayList<>();
-        childrenFolders.add(new ParentFolder("Parent", "BIG", grandChildrenFolders));
+        childrenFolders.add(new ParentFolder("Parent", "LARGE", grandChildrenFolders));
 
 
         List<Folder> nestedFolders = new ArrayList<>();
-        nestedFolders.add(new ParentFolder("Grand", "BIG", childrenFolders));
+        nestedFolders.add(new ParentFolder("Grand", "LARGE", childrenFolders));
         nestedCabinet = new FileCabinet(nestedFolders);
 
     }
@@ -107,7 +107,7 @@ public class FileCabinetTest {
 
     @Test
     void findFoldersBySize_noMatches_returnsEmptyList() {
-        List<Folder> result = simpleCabinet.findFolderBySize("BIG");
+        List<Folder> result = simpleCabinet.findFolderBySize("LARGE");
         assertEquals(0, result.size());
     }
 
